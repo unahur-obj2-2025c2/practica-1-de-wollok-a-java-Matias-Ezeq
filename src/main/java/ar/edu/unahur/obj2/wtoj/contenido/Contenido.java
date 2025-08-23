@@ -1,6 +1,6 @@
 package ar.edu.unahur.obj2.wtoj.contenido;
 
-public class Contenido {
+public abstract class Contenido {
     private final String titulo;
     private Double precioBase;
 
@@ -11,6 +11,12 @@ public class Contenido {
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public abstract Double precioCalcular();
+
+    public Double precio(){
+        return getPrecioBase() + precioCalcular();
     }
 
     public Double getPrecioBase() {

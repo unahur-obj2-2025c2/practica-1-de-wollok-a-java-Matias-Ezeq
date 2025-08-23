@@ -24,7 +24,8 @@ public class Serie extends Contenido{
         temporadas.add(temporada);
     }
 
-    public Double getPrecio(){
+    @Override
+    public Double precioCalcular(){
         return temporadas.stream().mapToDouble(t -> t.precio()).sum()/temporadas.size();
     }
 }
